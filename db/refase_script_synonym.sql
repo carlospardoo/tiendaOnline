@@ -1,0 +1,18 @@
+CREATE PUBLIC SYNONYM cli for dbarfs.cliente;
+CREATE PUBLIC SYNONYM ctg for dbarfs.categoria;
+CREATE PUBLIC SYNONYM ciu for dbarfs.ciudad;
+CREATE PUBLIC SYNONYM clidir for dbarfs.cliente_direccion;
+CREATE PUBLIC SYNONYM clitar for dbarfs.cliente_tarjetacredito;
+CREATE PUBLIC SYNONYM costoe for dbarfs.costo_envio;
+CREATE PUBLIC SYNONYM dir for dbarfs.direccion;
+CREATE PUBLIC SYNONYM inv for dbarfs.inventario;
+CREATE PUBLIC SYNONYM invprov for dbarfs.inventario_proveedor;
+CREATE PUBLIC SYNONYM pg for dbarfs.pago;
+CREATE PUBLIC SYNONYM pgpse for dbarfs.pago_pse;
+CREATE PUBLIC SYNONYM pgtar for dbarfs.pago_tarjetacredito;
+CREATE PUBLIC SYNONYM prm for dbarfs.parametro;
+CREATE PUBLIC SYNONYM pcli for dbarfs.pedido_cliente;
+CREATE PUBLIC SYNONYM prod for dbarfs.producto;
+CREATE OR REPLACE PUBLIC SYNONYM prodpcli for dbarfs.producto_pedidocliente;
+CREATE PUBLIC SYNONYM prov for dbarfs.proveedor;
+CREATE PUBLIC SYNONYM tar for dbarfs.tarjeta_credito;

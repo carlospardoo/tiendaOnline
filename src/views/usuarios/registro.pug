@@ -1,0 +1,57 @@
+
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+  link(rel='shortcut icon' type='image/x-icon' href='/img/favicon.png')
+  title Registrame
+
+section
+  .container(style='background-color: rgb(252, 227, 0);')
+    .row.mt-5
+      .col-md-3
+      .col-md-6
+        div
+          form.needs-validation(action="registrar")
+            img.rounded.mx-auto.d-block(src='/img/logo.png' alt='logo' style=' height:160px; width:250px ;')
+            br
+            label(for='correo') Correo:
+            input#correo.form-control(type='email' name='email' placeholder='Digita tu correo')
+            br
+            label(for='nombre') Nombre:
+            input#nombre.form-control(type='text' name='nombre' placeholder='Digita tus Nombre')
+            br
+            label(for='tipo') Tipo de Identificación:
+            select#tipo.form-control(name='tipo')
+              option(value='CC') CC
+              option(value='TI') TI
+              option(value='RC') RC
+              option(value='CE') CE
+              option(value='PA') PA
+            br
+            label(for='cedula') C&eacute;dula:
+            input#cedula.form-control(type='number' name='cedula' placeholder='Digita tu Cédula de ciudadania')
+            br
+            label(for='text') Nombre usuario:
+            input#contrasena.form-control(type='text' name='usern' placeholder='Digita tu nombre de usuario')
+            br
+            label(for='contrasena') Contrase&ntilde;a:
+            input#contrasena.form-control(type='password' name='psswd' placeholder='Digita tu contraseña')
+            label(for='Genero') Genero:
+            select#genero.form-control(name='genero')
+              option(value='M') Masculino
+              option(value='F') Femenino
+            label(for='fecha de nacimiento:') fecha de nacimiento:
+            input#fechanaci.form-control(type='date' name='fechanac')
+            br
+            br
+            button.btn.btn-warning.mt-3.btn-lg.rounded.mx-auto.d-block(type='button' id='registrar') registrarse   
+            br
+            br
+// Optional JavaScript
+// jQuery first, then Popper.js, then Bootstrap JS
+script(src='https://code.jquery.com/jquery-3.5.1.min.js')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
+script(src='/scripts/usuarios/registro.js')
