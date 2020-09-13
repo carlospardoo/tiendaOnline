@@ -1,6 +1,23 @@
 
 $( document ).ready(function() {
     
+    $.get('/ciudades/listar',{})
+        .done(function(data){
+            if(data.exe.hasOwnProperty('errorNum')){
+                console.error(data);
+            }
+            else{
+                for(let i=0;i<data.exe.objects.length;i++){
+                    $('#ciudad').append("<option value='"+data.exe.objects[i].id+"'>"+data.exe.objects[i].nombre+"</option>");
+                }
+                console.log(data);
+            }
+        })
+        .fail(function(){
+            alert('Error');
+            console.error('Error');
+        });
+
     $('#registrar').on('click', function(){
         event.preventDefault();
         $.post( $('form').attr( "action" ), $('form').serialize() )

@@ -5,13 +5,13 @@ class DireccionDAO{
         this.credenciales = credenciales;
     }
 
-    async crearDireccion(direccion,telefono,ciudad){
+    async crearDireccion(direccion){
 
         const sentencia = async function(conexion){
             return await conexion.execute(
                 `INSERT INTO dir (N_DIRECCION, Q_TELEFONO, K_IDCIUDAD) 
                 VALUES (:direccion, :telefono, :ciudad)`,
-                [ direccion, telefono, ciudad ],
+                [ direccion.direccion, direccion.telefono, direccion.ciudad ],
                 { autoCommit: true }
             );
         };
@@ -24,9 +24,8 @@ class DireccionDAO{
 
         const sentencia = async function(conexion){
             return await conexion.execute(
-                `INSERT INTO clidir (N_DIRECCION, Q_TELEFONO, K_IDCIUDAD) 
-                VALUES (:direccion, :telefono, :ciudad)`,
-                [ direccion, telefono, ciudad ],
+                "INSERT INTO clidir (K_IDDIRECCION, K_IDCLIENTE, I_ESTADO) VALUES(:direccion, :cliente, 'ACTIVO')",
+                [ direccion, cliente ],
                 { autoCommit: true }
             );
         };
@@ -43,6 +42,21 @@ class DireccionDAO{
                 FROM dir, clidir
                 WHERE clidir.K_IDCLIENTE = :cliente and clidir.K_IDDIRECCION=dir.K_IDDIRECCION`,
                 [cliente]
+            );
+        };
+         
+        return {exe: await cnx.run(this.credenciales, sentencia)};
+        
+    }
+
+    async consultarIdDireccion(direccion){
+
+        const sentencia = async function(conexion){
+            return await conexion.execute(
+                `SELECT K_IDDIRECCION
+                FROM dir 
+                WHERE N_DIRECCION=:direccion and Q_TELEFONO=:telefono`,
+                [direccion.direccion, direccion.telefono]
             );
         };
          

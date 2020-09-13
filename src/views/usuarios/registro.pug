@@ -38,12 +38,23 @@ section
             br
             label(for='contrasena') Contrase&ntilde;a:
             input#contrasena.form-control(type='password' name='psswd' placeholder='Digita tu contraseña')
+            br
             label(for='Genero') Genero:
             select#genero.form-control(name='genero')
               option(value='M') Masculino
               option(value='F') Femenino
-            label(for='fecha de nacimiento:') fecha de nacimiento:
+            br
+            label(for='fecha de nacimiento:') Fecha de nacimiento:
             input#fechanaci.form-control(type='date' name='fechanac')
+            br
+            label(for='ciudad') Ciudad:
+            select#ciudad.form-control(name='ciudad')
+            br
+            label(for='direccion') Dirección:
+            input#direccion.form-control(name='direccion')
+            br
+            label(for='telefono') Teléfono:
+            input#telefono.form-control(name='telefono')
             br
             br
             button.btn.btn-warning.mt-3.btn-lg.rounded.mx-auto.d-block(type='button' id='registrar') registrarse   

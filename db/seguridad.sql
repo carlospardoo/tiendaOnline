@@ -48,6 +48,10 @@ GRANT CREATE USER TO admusrrfs; -- privilegio para crear usuarios (necesita priv
 GRANT DROP USER TO admusrrfs;  --  privilegio para borrar usuarios (necesita privilegios system)
 GRANT CONNECT TO admusrrfs; -- privilegio para conectarse
 GRANT INSERT ON cli TO admusrrfs; -- privilegio para insertar en la tabla clientes
+GRANT INSERT ON dir TO admusrrfs; -- privilegio para insertar en la tabla direccion
+GRANT INSERT ON clidir TO admusrrfs; -- privilegio para insertar en la tabla ciente_direccion
+GRANT SELECT ON cli TO admusrrfs; -- privilegio para consultar en la tabla clientes
+GRANT SELECT ON dir TO admusrrfs; -- privilegio para consultar en la tabla direccion
 
 CREATE ROLE admrfs; -- rol para administrador de la tienda
 GRANT CONNECT TO admrfs; -- privilegio para conectarse
@@ -60,7 +64,6 @@ GRANT SELECT ON clitar TO admrfs;
 GRANT SELECT ON costoe TO admrfs;
 GRANT SELECT ON dir TO admrfs;
 GRANT SELECT ON inv TO admrfs;
-GRANT SELECT ON invprov TO admrfs;
 GRANT SELECT ON pg TO admrfs;
 GRANT SELECT ON pgpse TO admrfs;
 GRANT SELECT ON pgtar TO admrfs;
@@ -75,7 +78,6 @@ GRANT INSERT ON ctg TO admrfs;
 GRANT INSERT ON ciu TO admrfs;
 GRANT INSERT ON costoe TO admrfs;
 GRANT INSERT ON inv TO admrfs;
-GRANT INSERT ON invprov TO admrfs;
 GRANT INSERT ON prm TO admrfs;
 GRANT INSERT ON prod TO admrfs;
 GRANT INSERT ON prov TO admrfs;
@@ -84,7 +86,6 @@ GRANT UPDATE ON ctg TO admrfs;
 GRANT UPDATE ON ciu TO admrfs;
 GRANT UPDATE ON costoe TO admrfs;
 GRANT UPDATE ON inv TO admrfs;
-GRANT INSERT ON invprov TO admrfs;
 GRANT UPDATE ON pg TO admrfs;
 GRANT UPDATE ON prm TO admrfs;
 GRANT UPDATE ON pcli TO admrfs;
@@ -95,7 +96,6 @@ GRANT DELETE ON ctg TO admrfs;
 GRANT DELETE ON ciu TO admrfs;
 GRANT DELETE ON costoe TO admrfs;
 GRANT DELETE ON prm TO admrfs;
-GRANT INSERT ON invprov TO admrfs;
 GRANT DELETE ON prod TO admrfs;
 GRANT DELETE ON prov TO admrfs;
 
